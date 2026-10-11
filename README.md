@@ -10,4 +10,6 @@ Static site for andreotoo.com, served by the Cloudflare Worker `andreoto`
 - `wrangler.jsonc`: Worker config; `.assetsignore` keeps repo files off the site.
 
 Publishing: Cloudflare builds deploy every push to `main` (`npx wrangler deploy`).
+Pushes to other branches build a preview (`npx wrangler preview`, which needs the
+`previews` block in `wrangler.jsonc`).
 Check locally with `npx wrangler@4 deploy --dry-run`.
