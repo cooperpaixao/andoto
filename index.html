@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Andre Otoo | Growth Operator</title>
-<meta name="description" content="Andre Otoo is a Growth Operator helping creators scale their info products by optimizing backend systems and refining organic content. 100k+ followers and $350k+ generated for clients.">
+<meta name="description" content="Andre Otoo is an 18-year-old growth operator from New Brunswick, Canada, and the founder of Zibli Media. He helps creators scale their info products with organic content, funnels and backend systems. 100k+ followers and $350k+ generated for clients.">
 <link rel="canonical" href="https://andreotoo.com/">
 <meta name="theme-color" content="#020617">
 <meta name="color-scheme" content="dark">
@@ -16,30 +16,57 @@
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Andre Otoo">
 <meta property="og:title" content="Andre Otoo | Growth Operator">
-<meta property="og:description" content="Helping creators scale their info products. 100k+ followers generated, $350k+ cash generated, 20+ businesses helped.">
+<meta property="og:description" content="18-year-old growth operator from New Brunswick, Canada. Founder of Zibli Media. 100k+ followers generated, $350k+ cash generated, 20+ businesses helped.">
 <meta property="og:url" content="https://andreotoo.com/">
-<meta property="og:image" content="https://andreotoo.com/images/og.png?v=2">
+<meta property="og:image" content="https://andreotoo.com/images/og.png?v=3">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Andre Otoo, Growth Operator">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@andre_otoo">
 <meta name="twitter:title" content="Andre Otoo | Growth Operator">
-<meta name="twitter:description" content="Helping creators scale their info products. 100k+ followers generated, $350k+ cash generated, 20+ businesses helped.">
-<meta name="twitter:image" content="https://andreotoo.com/images/og.png?v=2">
+<meta name="twitter:description" content="18-year-old growth operator from New Brunswick, Canada. Founder of Zibli Media. 100k+ followers generated, $350k+ cash generated, 20+ businesses helped.">
+<meta name="twitter:image" content="https://andreotoo.com/images/og.png?v=3">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Andre Otoo",
-  "url": "https://andreotoo.com/",
-  "image": "https://andreotoo.com/images/og.png?v=2",
-  "email": "andre@andreotoo.com",
-  "jobTitle": "Growth Operator",
-  "description": "Growth Operator helping creators scale their info products by optimizing backend systems and refining organic content.",
-  "knowsAbout": ["growth operating", "info products", "organic content", "creator monetization", "backend systems"],
-  "sameAs": [
-    "https://instagram.com/andre.creates",
-    "https://www.youtube.com/@Andre.Creates"
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://andreotoo.com/#person",
+      "name": "Andre Otoo",
+      "url": "https://andreotoo.com/",
+      "image": "https://andreotoo.com/images/og.png?v=3",
+      "email": "andre@andreotoo.com",
+      "jobTitle": "Growth Operator",
+      "description": "Andre Otoo is an 18-year-old growth operator from New Brunswick, Canada, and the founder of Zibli Media. He helps creators scale their info products by building out the backend systems that turn followers into customers, and refining the organic content that brings them in.",
+      "address": { "@type": "PostalAddress", "addressRegion": "New Brunswick", "addressCountry": "CA" },
+      "knowsAbout": ["growth operating", "organic content", "funnel building", "info products", "backend systems", "YouTube", "Instagram"],
+      "founder": { "@id": "https://ziblimedia.com/#organization" },
+      "sameAs": [
+        "https://x.com/andre_otoo",
+        "https://instagram.com/andre.creates",
+        "https://www.linkedin.com/in/andre-otoo-7b7907377/",
+        "https://www.youtube.com/@Andre.Creates"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://ziblimedia.com/#organization",
+      "name": "Zibli Media",
+      "url": "https://ziblimedia.com/",
+      "logo": "https://andreotoo.com/images/zibli-logo.webp",
+      "description": "A content agency and backend operations business. Organic content on YouTube and Instagram, plus the funnels and backend systems that complete an offer.",
+      "founder": { "@id": "https://andreotoo.com/#person" }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://andreotoo.com/#webpage",
+      "url": "https://andreotoo.com/",
+      "name": "Andre Otoo | Growth Operator",
+      "about": { "@id": "https://andreotoo.com/#person" },
+      "mainEntity": { "@id": "https://andreotoo.com/#person" }
+    }
   ]
 }
 </script>
@@ -48,8 +75,9 @@
 @font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/inter-var-latin.woff2) format('woff2')}
 @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:500 700;font-display:swap;src:url(fonts/space-grotesk-var-latin.woff2) format('woff2')}
 
-/* Kept deliberately simple so it stays smooth on any machine: one flat background, no fixed or
-   blurred layers, no backdrop-filter, no looping animations. Only hover/tap transitions move. */
+/* Kept light so it stays smooth on any machine: one flat background, no fixed or blurred layers,
+   no backdrop-filter. Motion is limited to opacity/transform (the scroll reveal, the scroll cue and
+   the status dot), which the browser can animate without repainting the page. */
 :root{
   color-scheme:dark;
   --bg:#020617;
@@ -65,9 +93,10 @@
   --orange-deep:#f97316;
   --cyan:#22d3ee;
   --cyan-soft:#67e8f9;
+  --zibli:#ff8a3d;      /* the orange bar of the Zibli Media "Z" */
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--bg)}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--bg);scroll-behavior:smooth}
 body{
   font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
   background:var(--bg);
@@ -76,43 +105,43 @@ body{
   -webkit-font-smoothing:antialiased;
   -webkit-tap-highlight-color:transparent;
 }
-h1,h2{font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.1}
+h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.1}
 img{max-width:100%;display:block}
 a{color:inherit}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 .wrap{
-  max-width:760px;margin:0 auto;
-  padding:0 max(clamp(16px, 5vw, 20px), env(safe-area-inset-right)) 0 max(clamp(16px, 5vw, 20px), env(safe-area-inset-left));
+  max-width:720px;margin:0 auto;
+  padding:0 max(clamp(16px, 5vw, 24px), env(safe-area-inset-right)) 0 max(clamp(16px, 5vw, 24px), env(safe-area-inset-left));
 }
 
-/* HERO */
-.hero{padding:clamp(40px, 9vw, 88px) 0 clamp(36px, 6vw, 52px);text-align:center}
+/* HERO: fills the first screen, like cooperpaixao.com */
+.hero{
+  min-height:100vh;
+  min-height:100svh; /* the height with the mobile browser bars showing */
+  padding:max(56px, env(safe-area-inset-top)) max(clamp(16px, 5vw, 24px), env(safe-area-inset-right)) 110px max(clamp(16px, 5vw, 24px), env(safe-area-inset-left));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;position:relative;
+}
 .avatar{
-  width:clamp(116px, 32vw, 148px);aspect-ratio:1;border-radius:50%;
-  margin:0 auto 22px;padding:3px;
-  background:linear-gradient(135deg,var(--purple),var(--orange));
+  width:clamp(112px, 30vw, 140px);aspect-ratio:1;border-radius:50%;
+  padding:4px;margin-bottom:22px;
+  border:1px solid transparent;
+  background:linear-gradient(var(--bg),var(--bg)) padding-box,
+             linear-gradient(135deg,rgba(255,255,255,.6),rgba(255,255,255,.08) 55%,rgba(255,255,255,.32)) border-box;
 }
 .avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:var(--card)}
-.hero h1{font-size:clamp(2.3rem, 9vw, 3.4rem);font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
-.grad{
-  background:linear-gradient(90deg,var(--purple-soft),var(--orange));
-  -webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;color:transparent;
+.hero h1{font-size:clamp(2.4rem, 9vw, 3.4rem);font-weight:700;letter-spacing:-.02em;margin-bottom:22px}
+.tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:34px;list-style:none}
+.tag{
+  font-size:.85rem;font-weight:500;line-height:1.4;
+  padding:6px 16px;border-radius:99px;
+  border:1px solid var(--border);background:var(--card);color:var(--muted);
 }
-.role{
-  font-family:'Space Grotesk',system-ui,sans-serif;
-  font-size:.86rem;font-weight:600;
-  letter-spacing:.22em;text-transform:uppercase;
-  color:var(--purple-soft);
-  margin-bottom:18px;
-}
-.bio{color:var(--muted);font-size:clamp(1rem, 2.6vw, 1.08rem);max-width:540px;margin:0 auto 28px}
-.bio strong{color:var(--text);font-weight:600}
 
-/* LINK BUTTONS: same button language as paulgeorgoudis.com. Solid fill on the padding box, brand
-   gradient on the border box, and a soft brand glow rising from the bottom edge. */
-.links{max-width:380px;margin:0 auto;display:flex;flex-direction:column;gap:11px}
+/* SOCIAL BUTTONS: same button language as cooperpaixao.com and paulgeorgoudis.com. Solid fill on
+   the padding box, brand gradient on the border box, a soft brand glow rising from the bottom edge. */
+.socials{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;max-width:1000px}
 .btn{
   --grad:linear-gradient(135deg,rgba(255,255,255,.3),rgba(255,255,255,.08));
   --glow:rgba(255,255,255,.16);
@@ -120,58 +149,119 @@ a{color:inherit}
   --inner2:var(--inner);          /* inner glow, right half */
   --ico:var(--text);
   display:flex;align-items:center;justify-content:center;gap:9px;
-  width:100%;min-height:52px;
-  padding:0 16px;border-radius:12px;
+  min-height:52px;padding:0 20px;border-radius:12px;
   border:1px solid transparent;
   background:
     radial-gradient(75% 150% at 25% 135%,var(--inner),transparent 70%) padding-box,
     radial-gradient(75% 150% at 75% 135%,var(--inner2),transparent 70%) padding-box,
     linear-gradient(var(--fill),var(--fill)) padding-box,
     var(--grad) border-box;
-  color:var(--text);text-decoration:none;
+  color:var(--text);text-decoration:none;white-space:nowrap;
   font:500 .95rem/1.2 'Inter',system-ui,sans-serif;
   transition:transform .18s ease,box-shadow .18s ease;
 }
-.btn svg{width:20px;height:20px;flex-shrink:0;color:var(--ico)}
+.btn svg{width:19px;height:19px;flex-shrink:0;color:var(--ico)}
+.btn-x{--grad:linear-gradient(135deg,#fff,#7d8496);--glow:rgba(255,255,255,.18)}
 .btn-ig{
   --grad:linear-gradient(135deg,#feda75,#d62976 45%,#833ab4);
   --glow:rgba(214,41,118,.3);
   --inner:rgba(214,41,118,.18);--inner2:rgba(131,58,180,.2);
   --ico:#f0568f;
 }
-.btn-mail{--grad:linear-gradient(135deg,#fff,#7d8496);--glow:rgba(255,255,255,.18)}
-
-/* BOOK CALL: the main call to action, solid orange so it stands out from the two link buttons */
-.btn-book{
-  margin-top:10px;min-height:58px;border:0;border-radius:14px;
-  background:linear-gradient(135deg,var(--orange),var(--orange-deep));
-  color:#fff;
-  font:700 1.12rem/1.2 'Space Grotesk',system-ui,sans-serif;letter-spacing:.01em;
-  box-shadow:0 8px 26px rgba(249,115,22,.28);
+.btn-li{
+  --grad:linear-gradient(135deg,#9fd3ff,#0a66c2 45%,#0b3f78);
+  --glow:rgba(10,102,194,.36);
+  --inner:rgba(10,102,194,.22);
+  --ico:#3d9bff;
 }
-.btn:focus-visible{outline:2px solid var(--purple-soft);outline-offset:3px}
+.btn-yt{
+  --grad:linear-gradient(135deg,#ff9a93,#ff0000 45%,#8f0000);
+  --glow:rgba(255,0,0,.3);
+  --inner:rgba(255,0,0,.17);
+  --ico:#ff3b3b;
+}
+.btn-mail{
+  --grad:linear-gradient(135deg,var(--purple-soft),var(--purple) 40%,var(--orange));
+  --glow:rgba(168,85,247,.3);
+  --inner:rgba(168,85,247,.18);--inner2:rgba(251,146,60,.14);
+  --ico:var(--purple-soft);
+}
+.btn:focus-visible,.text-link:focus-visible,.scroll-cue:focus-visible,.project-link:focus-visible,.client:focus-visible,.thumb:focus-visible{
+  outline:2px solid var(--purple-soft);outline-offset:3px;border-radius:12px;
+}
 .btn:active{transform:scale(.985)}
 @media (hover:hover){
   .btn:hover{transform:translateY(-3px);box-shadow:0 9px 24px var(--glow)}
-  .btn-book:hover{box-shadow:0 12px 34px rgba(249,115,22,.45)}
 }
-.cta-sub{margin:14px auto 0;max-width:380px;color:var(--muted);font-size:.92rem;line-height:1.5}
-.cta-sub strong{color:var(--text);font-weight:600}
+
+.about-link{
+  display:inline-flex;align-items:center;gap:6px;min-height:44px;margin-top:14px;
+  font-family:'Space Grotesk',system-ui,sans-serif;
+  font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;
+}
+@media (hover:hover){.about-link:hover{color:var(--text)}}
+
+/* SCROLL CUE: bobs while you're at the top, fades out once you scroll */
+.scroll-cue{
+  position:absolute;bottom:max(28px, env(safe-area-inset-bottom));left:50%;
+  display:flex;flex-direction:column;align-items:center;gap:6px;padding:6px 12px;
+  color:var(--muted);text-decoration:none;
+  font-family:'Space Grotesk',system-ui,sans-serif;
+  font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  transform:translateX(-50%);
+  animation:bob 2.4s ease-in-out infinite;
+  transition:opacity .4s ease,color .2s ease;
+}
+.scroll-cue svg{width:22px;height:22px}
+.scroll-cue.hide{opacity:0;pointer-events:none;animation:none}
+@media (hover:hover){.scroll-cue:hover{color:var(--text)}}
+/* translateX stays inside the keyframes so the animation doesn't knock it off centre */
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
 
 /* SECTIONS */
-section{padding:clamp(34px, 6vw, 52px) 0}
+section{padding:clamp(36px, 7vw, 56px) 0}
 .section-label{
-  font-size:.82rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
-  text-align:center;margin-bottom:24px;
+  display:block;width:max-content;max-width:100%;margin:0 auto 22px;
+  font-size:.82rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;text-align:center;
+  background:linear-gradient(90deg,var(--purple-soft),var(--orange));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
 }
 
+/* WHAT I DO: project card in the style of cooperpaixao.com */
+.project{
+  position:relative;overflow:hidden;
+  border:1px solid var(--border);border-radius:20px;
+  background:radial-gradient(560px circle at 0% 0%,rgba(255,138,61,.09),transparent 48%),var(--card);
+  padding:clamp(24px, 6vw, 36px) clamp(20px, 6vw, 36px);
+  transition:transform .2s ease,border-color .2s ease;
+}
+@media (hover:hover){.project:hover{transform:translateY(-4px);border-color:rgba(255,138,61,.45)}}
+.status{
+  display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;
+  font-size:.8rem;font-weight:600;color:#4ade80;
+}
+.status .dot{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 10px #4ade80}
+.reveal.in .status .dot{animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.project .logo{height:clamp(40px, 11vw, 50px);width:auto;margin-bottom:18px}
+.project h3{font-size:clamp(1.3rem, 5vw, 1.5rem);margin-bottom:10px}
+.project p{color:var(--muted);font-size:clamp(.95rem, 2.8vw, 1rem);margin-bottom:22px;text-wrap:pretty}
+.project p strong{color:var(--text);font-weight:600}
+.project-link{
+  display:inline-flex;align-items:center;gap:8px;min-height:44px;
+  font-weight:600;font-size:.95rem;color:var(--zibli);text-decoration:none;
+  transition:gap .18s ease;
+}
+@media (hover:hover){.project-link:hover{gap:13px}}
+
 /* METRICS: three across on every screen size */
-.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px, 2.5vw, 18px);margin-bottom:clamp(22px, 5vw, 36px)}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px, 2.5vw, 18px);margin-bottom:clamp(14px, 4vw, 24px)}
 .metric{
   --c:var(--purple);--c-soft:var(--purple-soft);
   position:relative;overflow:hidden;
-  border:1px solid var(--border);border-radius:16px;
-  background:var(--card);
+  border:1px solid var(--border);border-radius:16px;background:var(--card);
   padding:clamp(16px, 4vw, 28px) 6px clamp(16px, 4vw, 26px);
   text-align:center;
 }
@@ -182,12 +272,12 @@ section{padding:clamp(34px, 6vw, 52px) 0}
 .m-orange{--c:var(--orange-deep);--c-soft:var(--orange)}
 .m-cyan{--c:var(--cyan);--c-soft:var(--cyan-soft)}
 .metric .num{
-  display:block;margin-bottom:2px;
+  display:block;margin-bottom:4px;
   font-size:clamp(1.3rem, 5.6vw, 2.4rem);font-weight:700;letter-spacing:-.02em;line-height:1.15;
-  color:var(--c-soft);
-  font-variant-numeric:tabular-nums;
+  color:var(--c-soft);font-variant-numeric:tabular-nums;
 }
-.metric .lbl{display:block;color:var(--muted);font-size:clamp(.72rem, 2.3vw, .86rem);font-weight:500;line-height:1.3}
+.metric .lbl{display:block;color:var(--muted);font-size:clamp(.78rem, 2.6vw, .86rem);font-weight:500;line-height:1.3}
+@media (min-width:600px){.metric .lbl br{display:none}}
 
 /* CLIENT CARDS */
 .clients{display:flex;flex-direction:column;gap:12px}
@@ -195,18 +285,14 @@ section{padding:clamp(34px, 6vw, 52px) 0}
   --c:rgba(168,85,247,.55);
   display:flex;align-items:center;gap:clamp(12px, 3.5vw, 18px);
   text-decoration:none;
-  border:1px solid var(--border);border-radius:16px;
-  background:var(--card);
+  border:1px solid var(--border);border-radius:16px;background:var(--card);
   padding:clamp(14px, 3.5vw, 20px) clamp(14px, 4vw, 24px);
   transition:transform .18s ease,border-color .18s ease;
 }
 .c-orange{--c:rgba(249,115,22,.55)}
 .c-cyan{--c:rgba(34,211,238,.55)}
-.client:focus-visible{outline:2px solid var(--purple-soft);outline-offset:3px}
 .client:active{transform:scale(.99)}
-@media (hover:hover){
-  .client:hover{transform:translateY(-2px);border-color:var(--c)}
-}
+@media (hover:hover){.client:hover{transform:translateY(-2px);border-color:var(--c)}}
 .client .logo{
   width:clamp(46px, 13vw, 60px);height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;flex-shrink:0;
   border:2px solid var(--c);
@@ -221,37 +307,109 @@ section{padding:clamp(34px, 6vw, 52px) 0}
 .vrf{display:inline-block;width:16px;height:16px;margin-left:6px;vertical-align:-2px}
 .client-tag{color:var(--muted);font-size:clamp(.8rem, 2.8vw, .86rem);line-height:1.4}
 .client-result{text-align:right;flex-shrink:0;font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.15}
-.client-result .big{display:block;font-weight:700;font-size:clamp(1.1rem, 4.2vw, 1.25rem)}
+.client-result .big{
+  display:block;font-weight:700;font-size:clamp(1.1rem, 4.2vw, 1.25rem);
+  background:linear-gradient(90deg,var(--purple-soft),var(--orange));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+}
 .client-result .small{color:var(--muted);font-size:.78rem;font-weight:500;letter-spacing:.04em}
 
-/* VIDEO: a thumbnail that swaps to the YouTube player on tap, so YouTube only loads if wanted */
-.video-frame{
+/* VIDEOS: one main player, the other videos as thumbnails underneath. Tapping a thumbnail swaps
+   it into the player. Without JavaScript the thumbnails simply open YouTube. */
+.player{
   position:relative;aspect-ratio:16/9;
+  max-width:calc((100svh - 40px) * 16 / 9);margin:0 auto; /* fits on screen in phone landscape */
   border-radius:16px;overflow:hidden;
   border:1px solid var(--border);background:#000;
 }
-.video-frame a,.video-frame img,.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
-.video-frame img{object-fit:cover}
-.play{
-  position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;
-  transition:transform .18s ease;
+.player iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.now-playing{
+  margin:12px auto 0;max-width:600px;text-align:center;
+  font-family:'Space Grotesk',system-ui,sans-serif;font-weight:600;font-size:clamp(.95rem, 3.4vw, 1.05rem);line-height:1.35;
+  text-wrap:balance;
 }
-.play svg{width:100%;height:100%;display:block}
-.video-frame a:focus-visible{outline:2px solid var(--purple-soft);outline-offset:-4px;border-radius:16px}
-@media (hover:hover){.video-frame a:hover .play{transform:scale(1.08)}}
+.more-label{
+  margin:clamp(26px, 6vw, 36px) 0 14px;text-align:center;color:var(--muted);
+  font-family:'Space Grotesk',system-ui,sans-serif;font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px, 2.4vw, 14px);list-style:none}
+.thumb{display:block;text-decoration:none;color:inherit;border-radius:12px;transition:transform .18s ease}
+.thumb .img{
+  display:block;position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;
+  border:1px solid var(--border);background:var(--card);
+  transition:border-color .18s ease;
+}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb .play{
+  position:absolute;right:7px;bottom:7px;width:26px;height:26px;border-radius:50%;
+  background:rgba(2,6,23,.72);display:flex;align-items:center;justify-content:center;
+}
+.thumb .play svg{width:11px;height:11px;margin-left:2px}
+.thumb .t{
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  margin-top:8px;font-size:.8rem;font-weight:500;line-height:1.35;color:var(--muted);
+}
+.thumb:active{transform:scale(.98)}
+@media (hover:hover){
+  .thumb:hover .img{border-color:rgba(192,132,252,.6)}
+  .thumb:hover .t{color:var(--text)}
+}
+.text-link{
+  display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;margin-top:18px;
+  font-weight:600;font-size:.92rem;color:var(--purple-soft);text-decoration:none;
+}
+@media (hover:hover){.text-link:hover{color:var(--text)}}
 
 /* FOOTER */
 footer{
-  padding:clamp(36px, 7vw, 56px) 20px max(36px, env(safe-area-inset-bottom));
+  padding:clamp(40px, 8vw, 60px) 20px max(36px, env(safe-area-inset-bottom));
   text-align:center;color:var(--faint);font-size:.8rem;letter-spacing:.05em;
 }
-footer a{color:#97a3c2;text-decoration:none;border-bottom:1px solid rgba(151,163,194,.35)}
-@media (hover:hover){footer a:hover{color:var(--text)}}
+.footer-nav a{
+  display:inline-flex;align-items:center;min-height:44px;padding:0 10px;
+  font-family:'Space Grotesk',system-ui,sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;
+}
+.built-by{margin-top:4px}
+.built-by a{position:relative;color:#97a3c2;text-decoration:none;border-bottom:1px solid rgba(151,163,194,.35)}
+.built-by a::after{content:'';position:absolute;inset:-14px -8px}  /* bigger tap area, same look */
+@media (hover:hover){.footer-nav a:hover,.built-by a:hover{color:var(--text)}}
 
+/* REVEAL ON SCROLL: sections fade up as they come into view and fade out again when they leave,
+   like cooperpaixao.com. Only opacity and transform change. */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* tablets: three buttons over two instead of four over one */
+@media (min-width:561px) and (max-width:800px){.socials{max-width:520px}}
+@media (max-width:560px){
+  .tags{gap:8px;margin-bottom:28px}
+  .tag{font-size:.8rem;padding:5px 13px}
+  .socials{gap:10px;width:100%;max-width:440px}
+  /* two per row, Email Me stretches full width underneath */
+  .btn{flex:1 1 calc(50% - 5px);padding:0 12px}
+  .thumbs{grid-template-columns:repeat(2,1fr);row-gap:16px}
+}
+@media (max-height:700px){
+  .hero{padding-top:max(32px, env(safe-area-inset-top));padding-bottom:96px}
+  .avatar{width:96px;margin-bottom:14px}
+  .hero h1{margin-bottom:14px}
+  .tags{margin-bottom:20px}
+  .about-link{margin-top:6px}
+}
+@media (max-width:340px){
+  .btn{font-size:.9rem;gap:7px}
+}
 @media (prefers-reduced-motion:reduce){
-  .btn,.client,.play{transition:none}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .scroll-cue{animation:none}
+  .reveal.in .status .dot{animation:none}
+  .btn,.project,.client,.thumb,.thumb .img,.project-link{transition:none}
 }
 </style>
+<noscript><style>.reveal{opacity:1;transform:none}.scroll-cue{display:none}</style></noscript>
 </head>
 <body>
 
@@ -263,45 +421,77 @@ footer a{color:#97a3c2;text-decoration:none;border-bottom:1px solid rgba(151,163
   </symbol>
 </svg>
 
+<!-- HERO -->
+<header class="hero">
+  <div class="avatar"><img src="images/andre-480.webp" alt="Andre Otoo" width="480" height="480" fetchpriority="high"></div>
+  <h1>Andre Otoo</h1>
+  <ul class="tags" aria-label="What I work on">
+    <li class="tag">Growth Operating</li>
+    <li class="tag">Content</li>
+    <li class="tag">Funnel Building</li>
+  </ul>
+
+  <nav class="socials" aria-label="Socials">
+    <a class="btn btn-x" href="https://x.com/andre_otoo" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      X / Twitter
+    </a>
+    <a class="btn btn-ig" href="https://instagram.com/andre.creates" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
+      Instagram
+    </a>
+    <a class="btn btn-li" href="https://www.linkedin.com/in/andre-otoo-7b7907377/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      LinkedIn
+    </a>
+    <a class="btn btn-yt" href="https://www.youtube.com/@Andre.Creates" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>
+      YouTube
+    </a>
+    <a class="btn btn-mail" href="mailto:andre@andreotoo.com">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="M3 6.5l9 6.5 9-6.5"/></svg>
+      Email Me
+    </a>
+  </nav>
+
+  <a class="about-link" href="/about">About me <span aria-hidden="true">&rarr;</span></a>
+
+  <a class="scroll-cue" id="scrollCue" href="#work">
+    Scroll
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+  </a>
+</header>
+
 <main class="wrap">
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="avatar"><img src="images/andre.webp" alt="Andre Otoo" width="320" height="320" fetchpriority="high"></div>
-    <h1>Andre <span class="grad">Otoo</span></h1>
-    <p class="role">Growth Operator</p>
-    <p class="bio">I help creators scale their <strong>info products</strong> by building out the <strong>backend systems</strong> that turn followers into customers, and refining the <strong>organic content</strong> that brings them in.</p>
-
-    <nav class="links" aria-label="Contact">
-      <a class="btn btn-ig" href="https://instagram.com/andre.creates" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
-        <span><span class="sr-only">Instagram </span>@andre.creates</span>
-      </a>
-      <a class="btn btn-mail" href="mailto:andre@andreotoo.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="M3 6.5l9 6.5 9-6.5"/></svg>
-        Email Me
-      </a>
-      <a class="btn btn-book" href="https://calendly.com/zibli/discovery-growth-call" target="_blank" rel="noopener">Book Free Call</a>
-    </nav>
-    <p class="cta-sub"><strong>Free, 20 minutes.</strong> See exactly how I can help you. Just to find out if it's a fit, no pressure.</p>
-  </header>
+  <!-- WHAT I DO -->
+  <section class="reveal" id="work" aria-labelledby="work-title">
+    <h2 class="section-label" id="work-title">What I Do</h2>
+    <article class="project">
+      <div class="status"><span class="dot" aria-hidden="true"></span>Active</div>
+      <img class="logo" src="images/zibli-logo.webp" alt="Zibli Media" width="459" height="156" loading="lazy" decoding="async">
+      <h3>Zibli Media</h3>
+      <p>A content agency and backend operations team in one. We handle <strong>organic content on YouTube and Instagram</strong>, plus the <strong>funnels and backend systems</strong> that complete an offer. The content brings the audience in, and the backend turns them into customers.</p>
+      <a class="project-link" href="https://ziblimedia.com" target="_blank" rel="noopener">Visit Zibli Media <span aria-hidden="true">&rarr;</span></a>
+    </article>
+  </section>
 
   <!-- RESULTS -->
-  <section id="results" aria-labelledby="results-title">
-    <h2 class="section-label grad" id="results-title">Who I've Helped So Far</h2>
+  <section class="reveal" id="results" aria-labelledby="results-title">
+    <h2 class="section-label" id="results-title">Who I've Helped So Far</h2>
 
     <div class="metrics">
       <div class="metric">
         <span class="num">100k+</span>
-        <span class="lbl">Followers Generated</span>
+        <span class="lbl">Followers<br> Generated</span>
       </div>
       <div class="metric m-orange">
         <span class="num">$350k+</span>
-        <span class="lbl">Cash Generated</span>
+        <span class="lbl">Cash<br> Generated</span>
       </div>
       <div class="metric m-cyan">
         <span class="num">20+</span>
-        <span class="lbl">Businesses Helped</span>
+        <span class="lbl">Businesses<br> Helped</span>
       </div>
     </div>
 
@@ -314,7 +504,7 @@ footer a{color:#97a3c2;text-decoration:none;border-bottom:1px solid rgba(151,163
           <div class="client-tag">AI Agency</div>
         </div>
         <div class="client-result">
-          <span class="big grad">+$30k</span>
+          <span class="big">+$60k</span>
           <span class="small">MRR</span>
         </div>
       </a>
@@ -326,7 +516,7 @@ footer a{color:#97a3c2;text-decoration:none;border-bottom:1px solid rgba(151,163
           <div class="client-tag">Info Product</div>
         </div>
         <div class="client-result">
-          <span class="big grad">+$12k</span>
+          <span class="big">+$24k</span>
           <span class="small">MRR</span>
         </div>
       </a>
@@ -338,7 +528,7 @@ footer a{color:#97a3c2;text-decoration:none;border-bottom:1px solid rgba(151,163
           <div class="client-tag">Trading Signals</div>
         </div>
         <div class="client-result">
-          <span class="big grad">+$50k</span>
+          <span class="big">+$100k</span>
           <span class="small">MRR</span>
         </div>
       </a>
@@ -346,37 +536,94 @@ footer a{color:#97a3c2;text-decoration:none;border-bottom:1px solid rgba(151,163
     </div>
   </section>
 
-  <!-- VIDEO -->
-  <section id="video" aria-labelledby="video-title">
-    <h2 class="section-label grad" id="video-title">See It In Action</h2>
-    <div class="video-frame">
-      <a href="https://www.youtube.com/watch?v=Ai4hkEq9Y8I" target="_blank" rel="noopener" data-yt="Ai4hkEq9Y8I" aria-label="Play video: How Jeronimo Celis Scaled to $20k/mo using Instagram Content">
-        <img src="images/video-640.webp" srcset="images/video-640.webp 640w, images/video-1280.webp 1280w" sizes="(max-width: 760px) calc(100vw - 40px), 720px" width="1280" height="720" alt="" loading="lazy" decoding="async">
-        <span class="play" aria-hidden="true"><svg viewBox="0 0 68 48"><path fill="#f00" d="M66.52 7.74a8.5 8.5 0 0 0-6-6C55.2.32 34 .32 34 .32s-21.2 0-26.52 1.42a8.5 8.5 0 0 0-6 6C.06 13.07.06 24 .06 24s0 10.93 1.42 16.26a8.5 8.5 0 0 0 6 6C12.8 47.68 34 47.68 34 47.68s21.2 0 26.52-1.42a8.5 8.5 0 0 0 6-6C67.94 34.93 67.94 24 67.94 24s0-10.93-1.42-16.26z"/><path fill="#fff" d="M27 34l18-10-18-10z"/></svg></span>
-      </a>
+  <!-- VIDEOS -->
+  <section class="reveal" id="videos" aria-labelledby="videos-title">
+    <h2 class="section-label" id="videos-title">See It In Action</h2>
+    <div class="player" id="player">
+      <iframe src="https://www.youtube-nocookie.com/embed/Ai4hkEq9Y8I?rel=0&amp;playsinline=1" title="How Jeronimo Celis Scaled to $20k/mo using Instagram Content" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
     </div>
+    <p class="now-playing" id="nowPlaying">How Jeronimo Celis Scaled to $20k/mo using Instagram Content</p>
+
+    <h3 class="more-label">More Videos</h3>
+    <ul class="thumbs">
+      <li><a class="thumb" href="https://www.youtube.com/watch?v=IK_d3TOJL48" target="_blank" rel="noopener" data-id="IK_d3TOJL48">
+        <span class="img"><img src="images/yt/IK_d3TOJL48.webp" alt="" width="640" height="360" loading="lazy" decoding="async"><span class="play" aria-hidden="true"><svg viewBox="0 0 10 12"><path fill="#fff" d="M0 0l10 6-10 6z"/></svg></span></span>
+        <span class="t">exposing a $30m YouTube sales funnel (big secret inside)</span>
+      </a></li>
+      <li><a class="thumb" href="https://www.youtube.com/watch?v=tji4e-2HYUo" target="_blank" rel="noopener" data-id="tji4e-2HYUo">
+        <span class="img"><img src="images/yt/tji4e-2HYUo.webp" alt="" width="640" height="360" loading="lazy" decoding="async"><span class="play" aria-hidden="true"><svg viewBox="0 0 10 12"><path fill="#fff" d="M0 0l10 6-10 6z"/></svg></span></span>
+        <span class="t">exposing how Alex Hormozi made $105m in 1 week using reels (copy him)</span>
+      </a></li>
+      <li><a class="thumb" href="https://www.youtube.com/watch?v=izBDlO_qiss" target="_blank" rel="noopener" data-id="izBDlO_qiss">
+        <span class="img"><img src="images/yt/izBDlO_qiss.webp" alt="" width="640" height="360" loading="lazy" decoding="async"><span class="play" aria-hidden="true"><svg viewBox="0 0 10 12"><path fill="#fff" d="M0 0l10 6-10 6z"/></svg></span></span>
+        <span class="t">how to get qualified b2b/b2c leads from short-form content (copy this)</span>
+      </a></li>
+      <li><a class="thumb" href="https://www.youtube.com/watch?v=1ZQw3fNMO1s" target="_blank" rel="noopener" data-id="1ZQw3fNMO1s">
+        <span class="img"><img src="images/yt/1ZQw3fNMO1s.webp" alt="" width="640" height="360" loading="lazy" decoding="async"><span class="play" aria-hidden="true"><svg viewBox="0 0 10 12"><path fill="#fff" d="M0 0l10 6-10 6z"/></svg></span></span>
+        <span class="t">how i got 2.5m views &amp; 40 qualified leads in 1.5 months (0 iq needed)</span>
+      </a></li>
+    </ul>
+    <a class="text-link" href="https://www.youtube.com/@Andre.Creates/videos" target="_blank" rel="noopener">See all on YouTube <span aria-hidden="true">&rarr;</span></a>
   </section>
 
 </main>
 
 <!-- FOOTER -->
 <footer>
-  <p>Website by <a href="https://hardhatscaling.com" target="_blank" rel="noopener">HardHat Scaling</a></p>
+  <nav class="footer-nav" aria-label="Pages"><a href="/about">About Andre</a></nav>
+  <p class="built-by">Website by <a href="https://hardhatscaling.com" target="_blank" rel="noopener">HardHat Scaling</a></p>
 </footer>
 
 <script>
-// Load the YouTube player only when the thumbnail is tapped. Ctrl/Cmd/Shift-click still opens YouTube.
-document.querySelector('[data-yt]').addEventListener('click', function (e) {
-  if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
-  e.preventDefault();
-  var f = document.createElement('iframe');
-  f.src = 'https://www.youtube-nocookie.com/embed/' + this.dataset.yt + '?autoplay=1&rel=0&playsinline=1';
-  f.title = 'How Jeronimo Celis Scaled to $20k/mo using Instagram Content';
-  f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-  f.referrerPolicy = 'strict-origin-when-cross-origin';
-  f.allowFullscreen = true;
-  this.replaceWith(f);
+// Reveal on scroll: sections fade in as they enter the screen and fade out again when they leave.
+var reveals = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) { en.target.classList.toggle('in', en.isIntersecting); });
+  }, { threshold: .12, rootMargin: '0px 0px -8% 0px' });
+  reveals.forEach(function (el) { io.observe(el); });
+} else {
+  reveals.forEach(function (el) { el.classList.add('in'); });
+}
+
+// Hide the scroll cue (and stop its bobbing) once you leave the top of the page.
+var cue = document.getElementById('scrollCue'), ticking = false;
+function updateCue() { cue.classList.toggle('hide', window.scrollY > 40); ticking = false; }
+addEventListener('scroll', function () {
+  if (!ticking) { requestAnimationFrame(updateCue); ticking = true; }
+}, { passive: true });
+updateCue();
+
+// Video thumbnails: swap the tapped video into the main player and the current one into its slot.
+// The iframe is replaced rather than re-pointed so each swap doesn't add a Back-button step.
+// Ctrl/Cmd/Shift-click still opens YouTube.
+var player = document.getElementById('player'), nowPlaying = document.getElementById('nowPlaying');
+var current = { id: 'Ai4hkEq9Y8I', title: nowPlaying.textContent };
+document.querySelectorAll('.thumb').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    var next = { id: a.dataset.id, title: a.querySelector('.t').textContent };
+    var old = player.querySelector('iframe'), f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + next.id + '?rel=0&playsinline=1&autoplay=1';
+    f.title = next.title;
+    f.allow = old.allow;
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
+    f.allowFullscreen = true;
+    old.replaceWith(f);
+    nowPlaying.textContent = next.title;
+    a.dataset.id = current.id;
+    a.href = 'https://www.youtube.com/watch?v=' + current.id;
+    a.querySelector('img').src = 'images/yt/' + current.id + '.webp';
+    a.querySelector('.t').textContent = current.title;
+    current = next;
+    var r = player.getBoundingClientRect();
+    if (r.top < 0 || r.bottom > innerHeight) player.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
 });
+
+// iOS only shows :active press styles when a touch listener exists.
+document.addEventListener('touchstart', function () {}, { passive: true });
 </script>
 
 </body>
