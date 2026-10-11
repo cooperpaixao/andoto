@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Andre Otoo | Growth Operator</title>
-<meta name="description" content="Andre Otoo is an 18-year-old growth operator from New Brunswick, Canada, and the founder of Zibli Media. He helps creators scale their info products with organic content, funnels and backend systems. 100k+ followers and $350k+ generated for clients.">
+<meta name="description" content="18-year-old growth operator from New Brunswick, Canada, and founder of Zibli Media. Organic content, funnels and backend systems for creators.">
 <link rel="canonical" href="https://andreotoo.com/">
 <meta name="theme-color" content="#020617">
 <meta name="color-scheme" content="dark">
@@ -36,13 +36,13 @@
       "@id": "https://andreotoo.com/#person",
       "name": "Andre Otoo",
       "url": "https://andreotoo.com/",
-      "image": "https://andreotoo.com/images/og.png?v=3",
+      "image": "https://andreotoo.com/images/andre-480.webp",
       "email": "andre@andreotoo.com",
       "jobTitle": "Growth Operator",
       "description": "Andre Otoo is an 18-year-old growth operator from New Brunswick, Canada, and the founder of Zibli Media. He helps creators scale their info products by building out the backend systems that turn followers into customers, and refining the organic content that brings them in.",
       "address": { "@type": "PostalAddress", "addressRegion": "New Brunswick", "addressCountry": "CA" },
       "knowsAbout": ["growth operating", "organic content", "funnel building", "info products", "backend systems", "YouTube", "Instagram"],
-      "founder": { "@id": "https://ziblimedia.com/#organization" },
+      "worksFor": { "@id": "https://ziblimedia.com/#organization" },
       "sameAs": [
         "https://x.com/andre_otoo",
         "https://instagram.com/andre.creates",
@@ -186,8 +186,9 @@ a{color:inherit}
   --inner:rgba(168,85,247,.18);--inner2:rgba(251,146,60,.14);
   --ico:var(--purple-soft);
 }
-.btn:focus-visible,.text-link:focus-visible,.scroll-cue:focus-visible,.project-link:focus-visible,.client:focus-visible,.thumb:focus-visible{
-  outline:2px solid var(--purple-soft);outline-offset:3px;border-radius:12px;
+.btn:focus-visible,.text-link:focus-visible,.scroll-cue:focus-visible,.project-link:focus-visible,.client:focus-visible,
+.thumb:focus-visible,.about-link:focus-visible,.footer-nav a:focus-visible,.built-by a:focus-visible,.poster:focus-visible{
+  outline:2px solid var(--purple-soft);outline-offset:3px;
 }
 .btn:active{transform:scale(.985)}
 @media (hover:hover){
@@ -197,10 +198,10 @@ a{color:inherit}
 .about-link{
   display:inline-flex;align-items:center;gap:6px;min-height:44px;margin-top:14px;
   font-family:'Space Grotesk',system-ui,sans-serif;
-  font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--muted);text-decoration:none;
+  font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:#c8d0e6;text-decoration:none;
 }
-@media (hover:hover){.about-link:hover{color:var(--text)}}
+@media (hover:hover){.about-link:hover{color:#fff}}
 
 /* SCROLL CUE: bobs while you're at the top, fades out once you scroll */
 .scroll-cue{
@@ -208,7 +209,7 @@ a{color:inherit}
   display:flex;flex-direction:column;align-items:center;gap:6px;padding:6px 12px;
   color:var(--muted);text-decoration:none;
   font-family:'Space Grotesk',system-ui,sans-serif;
-  font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
   transform:translateX(-50%);
   animation:bob 2.4s ease-in-out infinite;
   transition:opacity .4s ease,color .2s ease;
@@ -323,7 +324,11 @@ section{padding:clamp(36px, 7vw, 56px) 0}
   border-radius:16px;overflow:hidden;
   border:1px solid var(--border);background:#000;
 }
-.player iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.player iframe,.poster,.poster img{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.poster img{object-fit:cover}
+.play-big{position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;transition:transform .18s ease}
+.play-big svg{width:100%;height:100%;display:block}
+@media (hover:hover){.poster:hover .play-big{transform:scale(1.08)}}
 .now-playing{
   margin:12px auto 0;max-width:600px;text-align:center;
   font-family:'Space Grotesk',system-ui,sans-serif;font-weight:600;font-size:clamp(.95rem, 3.4vw, 1.05rem);line-height:1.35;
@@ -331,7 +336,7 @@ section{padding:clamp(36px, 7vw, 56px) 0}
 }
 .more-label{
   margin:clamp(26px, 6vw, 36px) 0 14px;text-align:center;color:var(--muted);
-  font-family:'Space Grotesk',system-ui,sans-serif;font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  font-family:'Space Grotesk',system-ui,sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
 }
 .thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px, 2.4vw, 14px);list-style:none}
 .thumb{display:block;text-decoration:none;color:inherit;border-radius:12px;transition:transform .18s ease}
@@ -368,7 +373,7 @@ footer{
 }
 .footer-nav a{
   display:inline-flex;align-items:center;min-height:44px;padding:0 10px;
-  font-family:'Space Grotesk',system-ui,sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  font-family:'Space Grotesk',system-ui,sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
   color:var(--muted);text-decoration:none;
 }
 .built-by{margin-top:4px}
@@ -378,14 +383,14 @@ footer{
 
 /* REVEAL ON SCROLL: sections fade up as they come into view and fade out again when they leave,
    like cooperpaixao.com. Only opacity and transform change. */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;scroll-margin-top:22px}
 .reveal.in{opacity:1;transform:none}
 
 /* tablets: three buttons over two instead of four over one */
 @media (min-width:561px) and (max-width:800px){.socials{max-width:520px}}
 @media (max-width:560px){
-  .tags{gap:8px;margin-bottom:28px}
-  .tag{font-size:.8rem;padding:5px 13px}
+  .tags{gap:6px;margin-bottom:28px}
+  .tag{font-size:.76rem;padding:5px 10px}
   .socials{gap:10px;width:100%;max-width:440px}
   /* two per row, Email Me stretches full width underneath */
   .btn{flex:1 1 calc(50% - 5px);padding:0 12px}
@@ -398,6 +403,26 @@ footer{
   .tags{margin-bottom:20px}
   .about-link{margin-top:6px}
 }
+@media (max-height:600px){
+  .avatar{width:76px;margin-bottom:10px}
+  .hero h1{font-size:2.1rem;margin-bottom:12px}
+  .tags{margin-bottom:16px}
+  .socials{gap:8px}
+  .btn{min-height:46px}
+  .about-link{margin-top:2px}
+  .hero{padding-bottom:78px}
+  .scroll-cue{bottom:14px}
+}
+/* phones held sideways: a compact hero, buttons on one row where they fit, no cue below the fold */
+@media (orientation:landscape) and (max-height:500px){
+  .hero{min-height:auto;padding-top:max(24px, env(safe-area-inset-top));padding-bottom:40px}
+  .avatar{width:64px;margin-bottom:8px}
+  .hero h1{font-size:2rem;margin-bottom:10px}
+  .tags{margin-bottom:14px}
+  .socials{max-width:none;gap:8px}
+  .btn{padding:0 12px}
+  .scroll-cue{display:none}
+}
 @media (max-width:340px){
   .btn{font-size:.9rem;gap:7px}
 }
@@ -406,7 +431,7 @@ footer{
   .reveal{opacity:1;transform:none;transition:none}
   .scroll-cue{animation:none}
   .reveal.in .status .dot{animation:none}
-  .btn,.project,.client,.thumb,.thumb .img,.project-link{transition:none}
+  .btn,.project,.client,.thumb,.thumb .img,.project-link,.play-big{transition:none}
 }
 </style>
 <noscript><style>.reveal{opacity:1;transform:none}.scroll-cue{display:none}</style></noscript>
@@ -423,7 +448,7 @@ footer{
 
 <!-- HERO -->
 <header class="hero">
-  <div class="avatar"><img src="images/andre-480.webp" alt="Andre Otoo" width="480" height="480" fetchpriority="high"></div>
+  <div class="avatar"><img src="images/andre-480.webp" srcset="images/andre-260.webp 260w, images/andre-480.webp 480w" sizes="140px" alt="Andre Otoo" width="480" height="480" fetchpriority="high"></div>
   <h1>Andre Otoo</h1>
   <ul class="tags" aria-label="What I work on">
     <li class="tag">Growth Operating</li>
@@ -469,9 +494,9 @@ footer{
     <h2 class="section-label" id="work-title">What I Do</h2>
     <article class="project">
       <div class="status"><span class="dot" aria-hidden="true"></span>Active</div>
-      <img class="logo" src="images/zibli-logo.webp" alt="Zibli Media" width="459" height="156" loading="lazy" decoding="async">
+      <img class="logo" src="images/zibli-logo.webp" alt="" width="459" height="156" loading="lazy" decoding="async">
       <h3>Zibli Media</h3>
-      <p>A content agency and backend operations team in one. We handle <strong>organic content on YouTube and Instagram</strong>, plus the <strong>funnels and backend systems</strong> that complete an offer. The content brings the audience in, and the backend turns them into customers.</p>
+      <p>I founded Zibli Media as a content agency and a backend operations team in one. We handle <strong>organic content on YouTube and Instagram</strong>, plus the <strong>funnels and backend systems</strong> that complete an offer. The content brings the audience in, and the backend turns them into customers.</p>
       <a class="project-link" href="https://ziblimedia.com" target="_blank" rel="noopener">Visit Zibli Media <span aria-hidden="true">&rarr;</span></a>
     </article>
   </section>
@@ -540,26 +565,29 @@ footer{
   <section class="reveal" id="videos" aria-labelledby="videos-title">
     <h2 class="section-label" id="videos-title">See It In Action</h2>
     <div class="player" id="player">
-      <iframe src="https://www.youtube-nocookie.com/embed/Ai4hkEq9Y8I?rel=0&amp;playsinline=1" title="How Jeronimo Celis Scaled to $20k/mo using Instagram Content" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+      <a class="poster" href="https://www.youtube.com/watch?v=Ai4hkEq9Y8I" target="_blank" rel="noopener" aria-label="Play video: How Jeronimo Celis Scaled to $20k/mo using Instagram Content">
+        <img src="images/yt/Ai4hkEq9Y8I.webp" srcset="images/yt/Ai4hkEq9Y8I.webp 640w, images/yt/Ai4hkEq9Y8I-1280.webp 1280w" sizes="(max-width:760px) 100vw, 720px" alt="" width="1280" height="720" loading="lazy" decoding="async">
+        <span class="play-big" aria-hidden="true"><svg viewBox="0 0 68 48"><path fill="#f00" d="M66.52 7.74a8.5 8.5 0 0 0-6-6C55.2.32 34 .32 34 .32s-21.2 0-26.52 1.42a8.5 8.5 0 0 0-6 6C.06 13.07.06 24 .06 24s0 10.93 1.42 16.26a8.5 8.5 0 0 0 6 6C12.8 47.68 34 47.68 34 47.68s21.2 0 26.52-1.42a8.5 8.5 0 0 0 6-6C67.94 34.93 67.94 24 67.94 24s0-10.93-1.42-16.26z"/><path fill="#fff" d="M27 34l18-10-18-10z"/></svg></span>
+      </a>
     </div>
-    <p class="now-playing" id="nowPlaying">How Jeronimo Celis Scaled to $20k/mo using Instagram Content</p>
+    <p class="now-playing" id="nowPlaying" aria-live="polite">How Jeronimo Celis Scaled to $20k/mo using Instagram Content</p>
 
     <h3 class="more-label">More Videos</h3>
     <ul class="thumbs">
       <li><a class="thumb" href="https://www.youtube.com/watch?v=IK_d3TOJL48" target="_blank" rel="noopener" data-id="IK_d3TOJL48">
-        <span class="img"><img src="images/yt/IK_d3TOJL48.webp" alt="" width="640" height="360" loading="lazy" decoding="async"><span class="play" aria-hidden="true"><svg viewBox="0 0 10 12"><path fill="#fff" d="M0 0l10 6-10 6z"/></svg></span></span>
+        <span class="img"><img src="images/yt/IK_d3TOJL48.webp" srcset="images/yt/IK_d3TOJL48-320.webp 320w, images/yt/IK_d3TOJL48.webp 640w" sizes="(max-width:560px) 46vw, 160px" alt="" width="640" height="360" loading="lazy" decoding="async"><span class="play" aria-hidden="true"><svg viewBox="0 0 10 12"><path fill="#fff" d="M0 0l10 6-10 6z"/></svg></span></span>
         <span class="t">exposing a $30m YouTube sales funnel (big secret inside)</span>
       </a></li>
       <li><a class="thumb" href="https://www.youtube.com/watch?v=tji4e-2HYUo" target="_blank" rel="noopener" data-id="tji4e-2HYUo">
-        <span class="img"><img src="images/yt/tji4e-2HYUo.webp" alt="" width="640" height="360" loading="lazy" decoding="async"><span class="play" aria-hidden="true"><svg viewBox="0 0 10 12"><path fill="#fff" d="M0 0l10 6-10 6z"/></svg></span></span>
+        <span class="img"><img src="images/yt/tji4e-2HYUo.webp" srcset="images/yt/tji4e-2HYUo-320.webp 320w, images/yt/tji4e-2HYUo.webp 640w" sizes="(max-width:560px) 46vw, 160px" alt="" width="640" height="360" loading="lazy" decoding="async"><span class="play" aria-hidden="true"><svg viewBox="0 0 10 12"><path fill="#fff" d="M0 0l10 6-10 6z"/></svg></span></span>
         <span class="t">exposing how Alex Hormozi made $105m in 1 week using reels (copy him)</span>
       </a></li>
       <li><a class="thumb" href="https://www.youtube.com/watch?v=izBDlO_qiss" target="_blank" rel="noopener" data-id="izBDlO_qiss">
-        <span class="img"><img src="images/yt/izBDlO_qiss.webp" alt="" width="640" height="360" loading="lazy" decoding="async"><span class="play" aria-hidden="true"><svg viewBox="0 0 10 12"><path fill="#fff" d="M0 0l10 6-10 6z"/></svg></span></span>
+        <span class="img"><img src="images/yt/izBDlO_qiss.webp" srcset="images/yt/izBDlO_qiss-320.webp 320w, images/yt/izBDlO_qiss.webp 640w" sizes="(max-width:560px) 46vw, 160px" alt="" width="640" height="360" loading="lazy" decoding="async"><span class="play" aria-hidden="true"><svg viewBox="0 0 10 12"><path fill="#fff" d="M0 0l10 6-10 6z"/></svg></span></span>
         <span class="t">how to get qualified b2b/b2c leads from short-form content (copy this)</span>
       </a></li>
       <li><a class="thumb" href="https://www.youtube.com/watch?v=1ZQw3fNMO1s" target="_blank" rel="noopener" data-id="1ZQw3fNMO1s">
-        <span class="img"><img src="images/yt/1ZQw3fNMO1s.webp" alt="" width="640" height="360" loading="lazy" decoding="async"><span class="play" aria-hidden="true"><svg viewBox="0 0 10 12"><path fill="#fff" d="M0 0l10 6-10 6z"/></svg></span></span>
+        <span class="img"><img src="images/yt/1ZQw3fNMO1s.webp" srcset="images/yt/1ZQw3fNMO1s-320.webp 320w, images/yt/1ZQw3fNMO1s.webp 640w" sizes="(max-width:560px) 46vw, 160px" alt="" width="640" height="360" loading="lazy" decoding="async"><span class="play" aria-hidden="true"><svg viewBox="0 0 10 12"><path fill="#fff" d="M0 0l10 6-10 6z"/></svg></span></span>
         <span class="t">how i got 2.5m views &amp; 40 qualified leads in 1.5 months (0 iq needed)</span>
       </a></li>
     </ul>
@@ -575,12 +603,13 @@ footer{
 </footer>
 
 <script>
-// Reveal on scroll: sections fade in as they enter the screen and fade out again when they leave.
+// Reveal on scroll: a section fades in once its top is 60px into the screen and fades out again
+// only after it has fully left, like cooperpaixao.com.
 var reveals = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window) {
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (en) { en.target.classList.toggle('in', en.isIntersecting); });
-  }, { threshold: .12, rootMargin: '0px 0px -8% 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
   reveals.forEach(function (el) { io.observe(el); });
 } else {
   reveals.forEach(function (el) { el.classList.add('in'); });
@@ -594,31 +623,45 @@ addEventListener('scroll', function () {
 }, { passive: true });
 updateCue();
 
-// Video thumbnails: swap the tapped video into the main player and the current one into its slot.
-// The iframe is replaced rather than re-pointed so each swap doesn't add a Back-button step.
+// Videos. The main player starts as a thumbnail and only loads YouTube when tapped, so the page
+// doesn't download YouTube's player for visitors who never watch. Tapping one of the smaller
+// thumbnails plays that video in the main player and moves the current one into its slot.
+// The iframe is replaced rather than re-pointed so a swap doesn't add a Back-button step.
 // Ctrl/Cmd/Shift-click still opens YouTube.
 var player = document.getElementById('player'), nowPlaying = document.getElementById('nowPlaying');
 var current = { id: 'Ai4hkEq9Y8I', title: nowPlaying.textContent };
+var reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function modified(e) { return e.ctrlKey || e.metaKey || e.shiftKey || e.altKey; }
+function play(v) {
+  var f = document.createElement('iframe');
+  f.src = 'https://www.youtube-nocookie.com/embed/' + v.id + '?rel=0&playsinline=1&autoplay=1';
+  f.title = v.title;
+  f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+  f.referrerPolicy = 'strict-origin-when-cross-origin';
+  f.allowFullscreen = true;
+  player.firstElementChild.replaceWith(f);
+}
+player.querySelector('.poster').addEventListener('click', function (e) {
+  if (modified(e)) return;
+  e.preventDefault();
+  play(current);
+});
 document.querySelectorAll('.thumb').forEach(function (a) {
   a.addEventListener('click', function (e) {
-    if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+    if (modified(e)) return;
     e.preventDefault();
     var next = { id: a.dataset.id, title: a.querySelector('.t').textContent };
-    var old = player.querySelector('iframe'), f = document.createElement('iframe');
-    f.src = 'https://www.youtube-nocookie.com/embed/' + next.id + '?rel=0&playsinline=1&autoplay=1';
-    f.title = next.title;
-    f.allow = old.allow;
-    f.referrerPolicy = 'strict-origin-when-cross-origin';
-    f.allowFullscreen = true;
-    old.replaceWith(f);
+    var img = a.querySelector('img');
+    play(next);
     nowPlaying.textContent = next.title;
     a.dataset.id = current.id;
     a.href = 'https://www.youtube.com/watch?v=' + current.id;
-    a.querySelector('img').src = 'images/yt/' + current.id + '.webp';
+    img.srcset = 'images/yt/' + current.id + '-320.webp 320w, images/yt/' + current.id + '.webp 640w';
+    img.src = 'images/yt/' + current.id + '.webp';
     a.querySelector('.t').textContent = current.title;
     current = next;
     var r = player.getBoundingClientRect();
-    if (r.top < 0 || r.bottom > innerHeight) player.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (r.top < 0 || r.bottom > innerHeight) player.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
   });
 });
 

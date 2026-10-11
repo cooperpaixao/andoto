@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>About Andre Otoo | Growth Operator from New Brunswick, Canada</title>
-<meta name="description" content="Hi, I'm Andre. I'm an 18-year-old growth operator from New Brunswick, Canada, and the founder of Zibli Media. I help creators scale their info products with organic content, funnels and backend systems.">
+<meta name="description" content="Hi, I'm Andre, an 18-year-old growth operator from New Brunswick, Canada, and founder of Zibli Media, helping creators scale their info products.">
 <link rel="canonical" href="https://andreotoo.com/about">
 <meta name="theme-color" content="#020617">
 <meta name="color-scheme" content="dark">
@@ -30,19 +30,32 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "AboutPage",
-  "url": "https://andreotoo.com/about",
-  "name": "About Andre Otoo",
-  "about": { "@id": "https://andreotoo.com/#person" },
-  "mainEntity": {
-    "@type": "Person",
-    "@id": "https://andreotoo.com/#person",
-    "name": "Andre Otoo",
-    "url": "https://andreotoo.com/",
-    "jobTitle": "Growth Operator",
-    "address": { "@type": "PostalAddress", "addressRegion": "New Brunswick", "addressCountry": "CA" },
-    "founder": { "@type": "Organization", "name": "Zibli Media", "url": "https://ziblimedia.com/" }
-  }
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "url": "https://andreotoo.com/about",
+      "name": "About Andre Otoo",
+      "about": { "@id": "https://andreotoo.com/#person" },
+      "mainEntity": { "@id": "https://andreotoo.com/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://andreotoo.com/#person",
+      "name": "Andre Otoo",
+      "url": "https://andreotoo.com/",
+      "image": "https://andreotoo.com/images/andre-480.webp",
+      "jobTitle": "Growth Operator",
+      "address": { "@type": "PostalAddress", "addressRegion": "New Brunswick", "addressCountry": "CA" },
+      "worksFor": { "@id": "https://ziblimedia.com/#organization" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://ziblimedia.com/#organization",
+      "name": "Zibli Media",
+      "url": "https://ziblimedia.com/",
+      "founder": { "@id": "https://andreotoo.com/#person" }
+    }
+  ]
 }
 </script>
 <style>
@@ -113,14 +126,47 @@ p strong{color:var(--text);font-weight:600}
 .facts .k{
   flex:0 0 120px;padding-top:4px;
   font-family:'Space Grotesk',system-ui,sans-serif;
-  font-size:.72rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
+  font-size:.78rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
   color:var(--purple-soft);
 }
 .facts .v{color:var(--text);flex:1;min-width:0;overflow-wrap:anywhere}
 
 .inline-link{color:var(--purple-soft);text-decoration:underline;text-underline-offset:3px}
+.more{display:flex;flex-wrap:wrap;gap:4px 22px;margin-top:-4px}
+.more a{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-weight:600;font-size:.95rem;color:var(--purple-soft);text-decoration:none}
+@media (hover:hover){.more a:hover{color:var(--text)}}
+
+/* contact buttons: same as the home page */
+.socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.btn{
+  --grad:linear-gradient(135deg,rgba(255,255,255,.3),rgba(255,255,255,.08));
+  --glow:rgba(255,255,255,.16);
+  --inner:rgba(255,255,255,.07);
+  --inner2:var(--inner);
+  --ico:var(--text);
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  min-height:50px;padding:0 18px;border-radius:12px;
+  border:1px solid transparent;
+  background:
+    radial-gradient(75% 150% at 25% 135%,var(--inner),transparent 70%) padding-box,
+    radial-gradient(75% 150% at 75% 135%,var(--inner2),transparent 70%) padding-box,
+    linear-gradient(#09132b,#09132b) padding-box,
+    var(--grad) border-box;
+  color:var(--text);text-decoration:none;white-space:nowrap;
+  font:500 .92rem/1.2 'Inter',system-ui,sans-serif;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.btn svg{width:18px;height:18px;flex-shrink:0;color:var(--ico)}
+.btn-x{--grad:linear-gradient(135deg,#fff,#7d8496);--glow:rgba(255,255,255,.18)}
+.btn-ig{--grad:linear-gradient(135deg,#feda75,#d62976 45%,#833ab4);--glow:rgba(214,41,118,.3);--inner:rgba(214,41,118,.18);--inner2:rgba(131,58,180,.2);--ico:#f0568f}
+.btn-li{--grad:linear-gradient(135deg,#9fd3ff,#0a66c2 45%,#0b3f78);--glow:rgba(10,102,194,.36);--inner:rgba(10,102,194,.22);--ico:#3d9bff}
+.btn-yt{--grad:linear-gradient(135deg,#ff9a93,#ff0000 45%,#8f0000);--glow:rgba(255,0,0,.3);--inner:rgba(255,0,0,.17);--ico:#ff3b3b}
+.btn-mail{--grad:linear-gradient(135deg,#c084fc,#a855f7 40%,#fb923c);--glow:rgba(168,85,247,.3);--inner:rgba(168,85,247,.18);--inner2:rgba(251,146,60,.14);--ico:#c084fc}
+.btn:active{transform:scale(.985)}
+@media (hover:hover){.btn:hover{transform:translateY(-3px);box-shadow:0 9px 24px var(--glow)}}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}}
 @media (hover:hover){.inline-link:hover{color:var(--orange)}}
-.back:focus-visible,.inline-link:focus-visible,footer a:focus-visible{outline:2px solid var(--purple-soft);outline-offset:3px;border-radius:4px}
+.back:focus-visible,.inline-link:focus-visible,footer a:focus-visible,.more a:focus-visible,.btn:focus-visible{outline:2px solid var(--purple-soft);outline-offset:3px}
 
 footer{
   margin-top:48px;border-top:1px solid var(--border);
@@ -135,17 +181,20 @@ footer a::after{content:'';position:absolute;inset:-14px -8px}
   .facts{padding:20px 18px}
   .facts li{flex-direction:column;gap:2px}
   .facts .k{flex:none;padding-top:0}
+  .socials .btn{flex:1 1 calc(50% - 5px);padding:0 12px}  /* two per row, Email Me full width */
 }
 </style>
 </head>
 <body>
 
+<header class="wrap">
+  <nav aria-label="Site"><a class="back" href="/"><span aria-hidden="true">&larr;</span> Andre Otoo</a></nav>
+</header>
+
 <main class="wrap">
 
-  <a class="back" href="/"><span aria-hidden="true">&larr;</span> Andre Otoo</a>
-
   <div class="intro">
-    <div class="avatar"><img src="images/andre-480.webp" alt="Andre Otoo" width="480" height="480"></div>
+    <div class="avatar"><img src="images/andre-480.webp" srcset="images/andre-260.webp 260w, images/andre-480.webp 480w" sizes="96px" alt="Andre Otoo" width="480" height="480"></div>
     <h1>About Andre</h1>
   </div>
 
@@ -159,21 +208,41 @@ footer a::after{content:'';position:absolute;inset:-14px -8px}
     <li><span class="k">Role</span><span class="v">Growth Operator</span></li>
     <li><span class="k">Focus</span><span class="v">Growth operating · Content · Funnel building</span></li>
     <li><span class="k">Founder of</span><span class="v">Zibli Media</span></li>
-    <li><span class="k">Contact</span><span class="v"><a class="inline-link" href="mailto:andre@andreotoo.com">andre@andreotoo.com</a></span></li>
   </ul>
 
-  <h2>What I do</h2>
-  <p>I work on both sides of a creator business: the <strong>organic content</strong> on YouTube and Instagram that brings people in, and the <strong>funnels and backend systems</strong> that turn those people into paying customers.</p>
-
   <h2>Zibli Media</h2>
-  <p>I'm the founder of <a class="inline-link" href="https://ziblimedia.com" target="_blank" rel="noopener">Zibli Media</a>, a content agency and backend operations team in one. We handle organic content on YouTube and Instagram, plus the funnels and backend systems that complete an offer.</p>
+  <p>I founded <a class="inline-link" href="https://ziblimedia.com" target="_blank" rel="noopener">Zibli Media</a> to do both jobs under one roof: we run creators' organic content on YouTube and Instagram, and build the funnels and backend systems that complete their offer.</p>
 
   <h2>Results so far</h2>
   <p>I've helped <strong>20+ businesses</strong>, generating <strong>100k+ followers</strong> and <strong>$350k+ in cash</strong> for clients, including Jeronimo Celis (AI agency), doctortama (info product) and myelitesignals (trading signals).</p>
+  <div class="more">
+    <a href="/#results">See the results <span aria-hidden="true">&rarr;</span></a>
+    <a href="/#videos">Watch my videos <span aria-hidden="true">&rarr;</span></a>
+  </div>
 
-  <h2>Contact</h2>
-  <p>Email: <a class="inline-link" href="mailto:andre@andreotoo.com">andre@andreotoo.com</a></p>
-  <p>Elsewhere: <a class="inline-link" href="https://x.com/andre_otoo" target="_blank" rel="noopener">X / Twitter</a> · <a class="inline-link" href="https://instagram.com/andre.creates" target="_blank" rel="noopener">Instagram</a> · <a class="inline-link" href="https://www.linkedin.com/in/andre-otoo-7b7907377/" target="_blank" rel="noopener">LinkedIn</a> · <a class="inline-link" href="https://www.youtube.com/@Andre.Creates" target="_blank" rel="noopener">YouTube</a></p>
+  <h2>Get in touch</h2>
+  <nav class="socials" aria-label="Contact">
+    <a class="btn btn-x" href="https://x.com/andre_otoo" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      X / Twitter
+    </a>
+    <a class="btn btn-ig" href="https://instagram.com/andre.creates" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
+      Instagram
+    </a>
+    <a class="btn btn-li" href="https://www.linkedin.com/in/andre-otoo-7b7907377/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      LinkedIn
+    </a>
+    <a class="btn btn-yt" href="https://www.youtube.com/@Andre.Creates" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>
+      YouTube
+    </a>
+    <a class="btn btn-mail" href="mailto:andre@andreotoo.com">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="M3 6.5l9 6.5 9-6.5"/></svg>
+      Email Me
+    </a>
+  </nav>
 
 </main>
 
