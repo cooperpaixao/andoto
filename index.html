@@ -18,7 +18,7 @@
 <meta property="og:title" content="Andre Otoo | Growth Operator">
 <meta property="og:description" content="18-year-old growth operator from New Brunswick, Canada. Founder of Zibli Media. 100k+ followers generated, $350k+ cash generated, 20+ businesses helped.">
 <meta property="og:url" content="https://andreotoo.com/">
-<meta property="og:image" content="https://andreotoo.com/images/og.png?v=3">
+<meta property="og:image" content="https://andreotoo.com/images/og.png?v=4">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Andre Otoo, Growth Operator">
@@ -26,7 +26,7 @@
 <meta name="twitter:site" content="@andre_otoo">
 <meta name="twitter:title" content="Andre Otoo | Growth Operator">
 <meta name="twitter:description" content="18-year-old growth operator from New Brunswick, Canada. Founder of Zibli Media. 100k+ followers generated, $350k+ cash generated, 20+ businesses helped.">
-<meta name="twitter:image" content="https://andreotoo.com/images/og.png?v=3">
+<meta name="twitter:image" content="https://andreotoo.com/images/og.png?v=4">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -123,15 +123,29 @@ a{color:inherit}
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;position:relative;
 }
+/* Instagram story ring: the colours flow around the photo by spinning a conic gradient. Only the
+   ring's transform animates, in 150 small steps per turn (30 a second), so the browser just turns
+   the already-painted ring and never repaints the page; the soft glow is a still box-shadow.
+   Measured with no GPU: about a tenth of one core while the photo is on screen. */
 .avatar{
   --size:clamp(112px, 30vw, 140px);
+  position:relative;isolation:isolate;
   width:var(--size);height:var(--size);flex-shrink:0;border-radius:50%;
-  padding:4px;margin-bottom:22px;
-  border:1px solid transparent;
-  background:linear-gradient(var(--bg),var(--bg)) padding-box,
-             linear-gradient(135deg,rgba(255,255,255,.6),rgba(255,255,255,.08) 55%,rgba(255,255,255,.32)) border-box;
+  padding:calc(var(--size) * .036);  /* ring thickness */
+  box-shadow:0 0 18px 1px rgba(214,41,118,.32),0 0 30px 4px rgba(250,126,30,.12);
+  margin-bottom:22px;
 }
-.avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:var(--card)}
+.avatar::before{
+  content:'';position:absolute;inset:0;border-radius:50%;z-index:-1;
+  background:conic-gradient(#feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5, #962fbf, #d62976, #fa7e1e, #feda75);
+  animation:ring 5s steps(150) infinite;
+}
+@keyframes ring{to{transform:rotate(1turn)}}
+.avatar img{
+  width:100%;height:100%;border-radius:50%;object-fit:cover;background:var(--card);
+  border:calc(var(--size) * .03) solid var(--bg);  /* the dark gap between ring and photo */
+}
+.hero.still .avatar::before{animation-play-state:paused}  /* scrolled away */
 .hero h1{font-size:clamp(2.4rem, 9vw, 3.4rem);font-weight:700;letter-spacing:-.02em;margin-bottom:22px}
 .tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:34px;list-style:none}
 .tag{
@@ -433,6 +447,7 @@ footer{
   html{scroll-behavior:auto}
   .reveal{opacity:1;transform:none;transition:none}
   .scroll-cue{animation:none}
+  .avatar::before{animation:none}
   .reveal.in .status .dot{animation:none}
   .btn,.project,.client,.thumb,.thumb .img,.project-link,.play-big{transition:none}
 }
@@ -617,6 +632,13 @@ if ('IntersectionObserver' in window) {
   reveals.forEach(function (el) { io.observe(el); });
 } else {
   reveals.forEach(function (el) { el.classList.add('in'); });
+}
+
+// Pause the photo's ring animation while the hero is off screen.
+if ('IntersectionObserver' in window) {
+  new IntersectionObserver(function (en) {
+    document.querySelector('.hero').classList.toggle('still', !en[0].isIntersecting);
+  }).observe(document.querySelector('.avatar'));
 }
 
 // Hide the scroll cue (and stop its bobbing) once you leave the top of the page.
