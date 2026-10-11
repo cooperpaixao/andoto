@@ -100,7 +100,8 @@ img{max-width:100%;display:block}
 
 .intro{display:flex;align-items:center;gap:clamp(16px, 4vw, 24px);margin:24px 0 18px}
 .avatar{
-  flex-shrink:0;width:clamp(76px, 20vw, 96px);aspect-ratio:1;border-radius:50%;padding:3px;
+  --size:clamp(76px, 20vw, 96px);
+  flex-shrink:0;width:var(--size);height:var(--size);border-radius:50%;padding:3px;
   border:1px solid transparent;
   background:linear-gradient(var(--bg),var(--bg)) padding-box,
              linear-gradient(135deg,rgba(255,255,255,.6),rgba(255,255,255,.08) 55%,rgba(255,255,255,.32)) border-box;
@@ -157,6 +158,7 @@ p strong{color:var(--text);font-weight:600}
   transition:transform .18s ease,box-shadow .18s ease;
 }
 .btn svg{width:18px;height:18px;flex-shrink:0;color:var(--ico)}
+.btn .verified{width:14px;height:14px;margin-left:-3px}
 .btn-x{--grad:linear-gradient(135deg,#fff,#7d8496);--glow:rgba(255,255,255,.18)}
 .btn-ig{--grad:linear-gradient(135deg,#feda75,#d62976 45%,#833ab4);--glow:rgba(214,41,118,.3);--inner:rgba(214,41,118,.18);--inner2:rgba(131,58,180,.2);--ico:#f0568f}
 .btn-li{--grad:linear-gradient(135deg,#9fd3ff,#0a66c2 45%,#0b3f78);--glow:rgba(10,102,194,.36);--inner:rgba(10,102,194,.22);--ico:#3d9bff}
@@ -186,6 +188,14 @@ footer a::after{content:'';position:absolute;inset:-14px -8px}
 </style>
 </head>
 <body>
+
+<!-- Instagram's verified badge -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="vrf" viewBox="0 0 40 40">
+    <path fill="#fff" d="M27.413 14.319l2.254 2.287-11.43 11.5-6.835-6.93 2.244-2.258 4.587 4.581z"/>
+    <path fill="#0095f6" fill-rule="evenodd" d="M19.998 3.094 14.638 0l-2.972 5.15H5.432v6.354L0 14.64 3.094 20 0 25.359l5.432 3.137v5.905h5.975L14.638 40l5.36-3.094L25.358 40l3.232-5.6h6.162v-6.01L40 25.359 36.905 20 40 14.641l-5.248-3.03v-6.46h-6.419L25.358 0l-5.36 3.094Zm7.415 11.225 2.254 2.287-11.43 11.5-6.835-6.93 2.244-2.258 4.587 4.581 9.18-9.18Z"/>
+  </symbol>
+</svg>
 
 <header class="wrap">
   <nav aria-label="Site"><a class="back" href="/"><span aria-hidden="true">&larr;</span> Andre Otoo</a></nav>
@@ -229,6 +239,7 @@ footer a::after{content:'';position:absolute;inset:-14px -8px}
     <a class="btn btn-ig" href="https://instagram.com/andre.creates" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
       Instagram
+      <svg class="verified" role="img" aria-label="Verified"><use href="#vrf"/></svg>
     </a>
     <a class="btn btn-li" href="https://www.linkedin.com/in/andre-otoo-7b7907377/" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>

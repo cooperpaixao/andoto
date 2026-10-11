@@ -124,7 +124,8 @@ a{color:inherit}
   text-align:center;position:relative;
 }
 .avatar{
-  width:clamp(112px, 30vw, 140px);aspect-ratio:1;border-radius:50%;
+  --size:clamp(112px, 30vw, 140px);
+  width:var(--size);height:var(--size);flex-shrink:0;border-radius:50%;
   padding:4px;margin-bottom:22px;
   border:1px solid transparent;
   background:linear-gradient(var(--bg),var(--bg)) padding-box,
@@ -161,6 +162,7 @@ a{color:inherit}
   transition:transform .18s ease,box-shadow .18s ease;
 }
 .btn svg{width:19px;height:19px;flex-shrink:0;color:var(--ico)}
+.btn .verified{width:15px;height:15px;margin-left:-3px}
 .btn-x{--grad:linear-gradient(135deg,#fff,#7d8496);--glow:rgba(255,255,255,.18)}
 .btn-ig{
   --grad:linear-gradient(135deg,#feda75,#d62976 45%,#833ab4);
@@ -295,7 +297,8 @@ section{padding:clamp(36px, 7vw, 56px) 0}
 .client:active{transform:scale(.99)}
 @media (hover:hover){.client:hover{transform:translateY(-2px);border-color:var(--c)}}
 .client .logo{
-  width:clamp(46px, 13vw, 60px);height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;flex-shrink:0;
+  --s:clamp(46px, 13vw, 60px);
+  width:var(--s);height:var(--s);border-radius:50%;object-fit:cover;flex-shrink:0;
   border:2px solid var(--c);
 }
 .client-info{flex:1;min-width:0}
@@ -397,14 +400,14 @@ footer{
   .thumbs{grid-template-columns:repeat(2,1fr);row-gap:16px}
 }
 @media (max-height:700px){
-  .hero{padding-top:max(32px, env(safe-area-inset-top));padding-bottom:96px}
-  .avatar{width:96px;margin-bottom:14px}
-  .hero h1{margin-bottom:14px}
-  .tags{margin-bottom:20px}
+  .hero{padding-top:max(36px, env(safe-area-inset-top));padding-bottom:96px}
+  .avatar{margin-bottom:16px}
+  .hero h1{margin-bottom:16px}
+  .tags{margin-bottom:22px}
   .about-link{margin-top:6px}
 }
 @media (max-height:600px){
-  .avatar{width:76px;margin-bottom:10px}
+  .avatar{--size:84px;margin-bottom:10px}
   .hero h1{font-size:2.1rem;margin-bottom:12px}
   .tags{margin-bottom:16px}
   .socials{gap:8px}
@@ -416,7 +419,7 @@ footer{
 /* phones held sideways: a compact hero, buttons on one row where they fit, no cue below the fold */
 @media (orientation:landscape) and (max-height:500px){
   .hero{min-height:auto;padding-top:max(24px, env(safe-area-inset-top));padding-bottom:40px}
-  .avatar{width:64px;margin-bottom:8px}
+  .avatar{--size:64px;margin-bottom:8px}
   .hero h1{font-size:2rem;margin-bottom:10px}
   .tags{margin-bottom:14px}
   .socials{max-width:none;gap:8px}
@@ -438,7 +441,7 @@ footer{
 </head>
 <body>
 
-<!-- Instagram's verified badge, drawn once and reused by the client cards -->
+<!-- Instagram's verified badge, drawn once and reused by the Instagram button and the client cards -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="vrf" viewBox="0 0 40 40">
     <path fill="#fff" d="M27.413 14.319l2.254 2.287-11.43 11.5-6.835-6.93 2.244-2.258 4.587 4.581z"/>
@@ -464,6 +467,7 @@ footer{
     <a class="btn btn-ig" href="https://instagram.com/andre.creates" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
       Instagram
+      <svg class="verified" role="img" aria-label="Verified"><use href="#vrf"/></svg>
     </a>
     <a class="btn btn-li" href="https://www.linkedin.com/in/andre-otoo-7b7907377/" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
@@ -529,7 +533,7 @@ footer{
           <div class="client-tag">AI Agency</div>
         </div>
         <div class="client-result">
-          <span class="big">+$60k</span>
+          <span class="big">+$20k</span>
           <span class="small">MRR</span>
         </div>
       </a>
